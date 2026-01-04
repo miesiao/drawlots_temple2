@@ -1,0 +1,7 @@
+{
+  "name": "行天宮線上求籤 AI 版",
+  "description": "一個結合 AI 靈籤與傳統擲筊體驗的響應式網站，重現行天宮求籤流程。",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
