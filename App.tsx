@@ -236,19 +236,24 @@ const App: React.FC = () => {
     const showHistoryButton = step === Step.Result || step === Step.History;
     return (
       <header className="sticky top-0 z-50 bg-[#8b0000] text-white p-4 shadow-lg flex items-center h-16">
-        <div className={`flex w-full ${showHistoryButton ? 'justify-between' : 'justify-center'}`}>
-          <div className={`${!showHistoryButton ? 'text-center' : ''}`}>
-            <h1 className="text-xl md:text-2xl font-bold font-serif-tc tracking-widest">行天宮線上求籤</h1>
-          </div>
-          {showHistoryButton && (
-            <button 
-              onClick={() => setStep(Step.History)}
-              className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-full transition-colors"
-            >
-              <HandCoins size={20} />
-              <span className="hidden sm:inline">功德簿</span>
-            </button>
-          )}
+        <div className="relative w-full flex items-center">
+           {/* Center Title */}
+           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <h1 className="text-xl md:text-2xl font-bold font-serif-tc tracking-widest">恩主公線上求籤</h1>
+           </div>
+           
+           {/* Right History Button */}
+           <div className="ml-auto relative z-10">
+            {showHistoryButton && (
+              <button 
+                onClick={() => setStep(Step.History)}
+                className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-full transition-colors"
+              >
+                <HandCoins size={20} />
+                <span className="hidden sm:inline">功德簿</span>
+              </button>
+            )}
+           </div>
         </div>
       </header>
     );
@@ -541,7 +546,7 @@ const App: React.FC = () => {
       <canvas ref={canvasRef} width={400} height={800} className="hidden" />
 
       <footer className="bg-gray-100 p-6 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} 行天宮線上求籤 AI 版 - 本站為模擬體驗
+        © {new Date().getFullYear()} 恩主公線上求籤 AI 版 - 本站為模擬體驗
       </footer>
     </div>
   );
